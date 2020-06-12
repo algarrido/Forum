@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Tema iniciado</ion-title>
+    <ion-buttons slot="end">
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{hilo.title}}</ion-card-title>
+      <ion-card-subtitle>{{hilo.description}}</ion-card-subtitle>
+      
+    </ion-card-header>
+  </ion-card>
+
+  <ion-content padding>
+    <form [formGroup]="todoForm" (ngSubmit)="publicar()">
+      <ion-textarea formControlName="contenido" cols="50" rows="5" style="border:solid 1px orange;"></ion-textarea>
+      <ion-button shape="round" color="primary" fill="solid" type="submit" >Comentar</ion-button>
+    </form>
+
+  <ion-card *ngFor="let comentario of listadoPanel">
+    <ion-card-content>
+      {{comentario.contenido}}
+    </ion-card-content>
+    <ion-card-content>
+      <i>{{comentario.userId}}</i>
+    </ion-card-content>
+  </ion-card>
+
+
+
+</ion-content>
+
+<!--[disabled]="!this.todoForm.valid" -->

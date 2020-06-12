@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> 
+      Crear tema
+      
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+ 
+
+  <form [formGroup]="todoForm" (ngSubmit)="addNote()">
+    <ion-item>
+      <p><ion-label>Titulo del tema: </ion-label>
+      <ion-input type="text" formControlName="title"></ion-input></p>
+    </ion-item>
+    <ion-item>
+      <p> <ion-label>Descripcion: </ion-label>
+      <ion-textarea formControlName="description"></ion-textarea></p>
+     
+    </ion-item>
+    <ion-button shape="round" color="primary" fill="solid" type="submit" [disabled]="!this.todoForm.valid">Publicar
+    </ion-button>
+  </form>
+</ion-content>

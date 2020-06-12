@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Perfil
+      <ion-button float-right (click)="this.logout()">Cerrar sesion</ion-button>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-img style= "width: 80px; height: 80px;" [src]="this.auth.user.imageUrl"></ion-img>
+    </ion-card-content>
+    <ion-card-content>
+      {{this.auth.user.email}}
+    </ion-card-content>
+  </ion-card>
+
+
+
+</ion-content>
